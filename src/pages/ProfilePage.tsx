@@ -11,7 +11,7 @@ const ProfilePage = () => {
           </div>
           <div className="avatar">
             <img
-              src="https://scontent.fhan14-4.fna.fbcdn.net/v/t39.30808-6/329727137_1366057400835481_5429393417277795760_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=GZ8x2Wq6UCEAX_zvAP-&_nc_ht=scontent.fhan14-4.fna&oh=00_AfAXIbGtwHervuqPWAd1pwT7Ms8kKf98xe2frlx4l1-uRw&oe=655A7CD0"
+              src="https://scontent.fhan17-1.fna.fbcdn.net/v/t39.30808-6/405170050_1565348740867849_4971566158221152576_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFMMPvdYLhoYZKoUNTlFHBmGPsZOT9sjMMY-xk5P2yMw4UuMYng18yoe5u3NvcNIKFPaoq8WBKxFkj6iSnt1akd&_nc_ohc=huqIx4Ae3gsAX-6pwmu&_nc_ht=scontent.fhan17-1.fna&oh=00_AfDLITFIRUGWyiznPemHS8Kj5oCvWaeRKOkm-ce2zZXU8A&oe=656598C7"
               alt=""
             />
           </div>
