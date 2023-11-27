@@ -1,0 +1,100 @@
+{
+  "products": [
+    {
+      "category": "Iphone",
+      "name": "Iphone 15 Pro Max",
+      "image": "https://cdn-v2.didongviet.vn/files/products/2023/8/13/1/1694546936133_thumb_iphone_15_pro_trang_didongviet.png",
+      "price": 34990000,
+      "description": "iPhone 15 Pro Max thiết kế mới với chất liệu titan chuẩn hàng không vũ trụ bền bỉ, trọng lượng nhẹ, đồng thời trang bị nút Action và cổng sạc USB-C tiêu chuẩn giúp nâng cao tốc độ sạc. Khả năng chụp ảnh đỉnh cao của iPhone 15 bản Pro Max đến từ camera chính 48MP, camera UltraWide 12MP và camera telephoto có khả năng zoom quang học đến 5x. Bên cạnh đó, iPhone 15 ProMax sử dụng chip A17 Pro mới mạnh mẽ.",
+      "id": 1
+    },
+    {
+      "category": "Iphone",
+      "name": "Iphone 14 Pro Max",
+      "image": "https://vuatao.vn/wp-content/uploads/2022/09/Untitled-4-1.png",
+      "price": "26390000",
+      "description": "iPhone 14 Pro Max sở hữu thiết kế màn hình Dynamic Island ấn tượng cùng màn hình OLED 6,7 inch hỗ trợ always-on display và hiệu năng vượt trội với chip A16 Bionic. Bên cạnh đó máy còn sở hữu nhiều nâng cấp về camera với cụm camera sau 48MP, camera trước 12MP dùng bộ nhớ RAM 6GB đa nhiệm vượt trội",
+      "id": 2
+    },
+    {
+      "category": "Iphone",
+      "name": "Iphone 13 Pro Max",
+      "image": "https://chauapple.com/wp-content/uploads/2020/12/iphone-13-pro-max-blue-select.png",
+      "price": 23990000,
+      "description": "iPhone 13 Pro Max chắc chắn sẽ là chiếc smartphone cao cấp được quan tâm nhiều nhất trong năm 2021. Dòng iPhone 13 series được ra mắt vào ngày 14 tháng 9 năm 2021 tại sự kiện \"California Streaming\" diễn ra trực tuyến tương tự năm ngoái cùng với 3 phiên bản khác là iPhone 13, 13 mini và 13 Pro.",
+      "id": 3
+    },
+    {
+      "category": "Oppo",
+      "name": "OPPO Find N2 Flip",
+      "image": "https://image.oppo.com/content/dam/oppo/common/mkt/v2-2/find-n2-flip-en/no-silk-screen/navigation/find-n2-flip-purple_440_440_in.png.thumb.webp",
+      "price": 14090000,
+      "description": "Thiết kế bền bỉ cho phép gập đến 400.000 lần, giúp dễ dàng gấp gọn và mang theo\nMàn hình phụ kích thước 3.26 inch cho khả năng hiển thị trực quan và nhiều chi tiết\nHệ thống ống kính chất lượng cao với cảm biến Sony IMX890 có độ phân giải 50MP\nHiệu năng mạnh mẽ với vi xử lý MediaTek 9000+ kết hợp RAM 8GB và ROM 256GB",
+      "id": 4
+    },
+    {
+      "category": "Oppo",
+      "name": "OPPO Find X5 Pro",
+      "image": "https://lequanmobile.com/wp-content/uploads/2022/12/OPPO-FIND-X5-Pro-Tra%CC%86%CC%81ng-.png",
+      "price": 14990000,
+      "description": "SP chính hãng đã active, thu lại từ khách không sử dụng trong thời gian test(30 ngày)\nĐầy đủ phụ kiện từ NSX (Giảm thêm 200K nếu không kèm phụ kiện). Máy có thể đã qua BH hãng hoặc sửa chữa thay thế linh kiện. Có nguồn gốc rõ ràng, xuất hoá đơn eVAT.",
+      "id": 5
+    },
+    {
+      "category": "Oppo",
+      "name": "OPPO Reno10 Pro+ 5G",
+      "image": "https://assets.sangeethamobiles.com/product_img/13711/1689320482_kO2.jpg",
+      "price": 18990000,
+      "description": " OPPO Reno10 Pro+ 5G là một sản phẩm tiếp nối sự thành công của thế hệ trước đó, với thiết kế đẹp mắt, cấu hình mạnh mẽ và máy ảnh chất lượng cao. Máy đáp ứng được nhu cầu giải trí, chụp ảnh và làm việc của người dùng, là lựa chọn hoàn hảo cho những ai đang tìm kiếm một chiếc điện thoại đa năng và hiện đại.",
+      "id": 6
+    },
+    {
+      "category": "Xiaomi",
+      "name": "Xiaomi Mi 11 Ultra",
+      "image": "https://themayanagari.com/wp-content/uploads/2021/04/Xiaomi-Mi-11-Ultra-2.png",
+      "price": 9090000,
+      "description": "Mi 11 Ultra mẫu điện thoại cao cấp của Xiaomi chính thức lộ diện, bên cạnh tích hợp trang bị đỉnh cao mang đến hiệu năng hàng đầu, Xiaomi còn tập trung rất nhiều công nghệ vào camera cùng màn hình phụ tạo nên trải nghiệm sử dụng khác biệt dành cho người dùng.\nVẻ đẹp cao cấp đến từ gốm cùng màn hình phụ đa năng",
+      "id": 7
+    },
+    {
+      "category": "Xiaomi",
+      "name": "Xiaomi 13 Pro",
+      "image": "https://vietphone.vn/images/stories/virtuemart/product/xiaomi-13-pro-vietphone.png",
+      "price": 24290000,
+      "description": "Xiaomi 13 Pro là siêu phẩm mới từ nhà Xiaomi đồng hành cùng Leica - thương hiệu nhiếp ảnh danh tiếng. Đây được xem là tâm điểm thu hút sự chú ý của cộng đồng người dùng trong năm 2023, đặc biệt là những ai yêu thích nhiếp ảnh nhờ camera ấn tượng.\nTrang bị cảm biến 1 inch và hợp tác cùng Leica",
+      "id": 8
+    },
+    {
+      "category": "Xiaomi",
+      "name": "Xiaomi 13 Ultra",
+      "image": "https://bizweb.dktcdn.net/100/375/548/products/pms-1681805074-57094989-1682511726662.png?v=1682511730613",
+      "price": 25990000,
+      "description": "Xiaomi 13 Ultra có hệ thống 4 camera sau, bao gồm cảm biến chính Sony IMX989 50MP, ống kính siêu rộng Sony IMX858 50MP, ống kính Sony IMX858 chụp siêu rộng 50MP và camera tele zoom 5x. Bên cạnh khả năng nhiếp ảnh đỉnh cao, điện thoại còn được trang bị màn hình C7 LTPO OLED cùng một hiệu năng vượt trội với con chip Snapdragon 8 Gen 2 và bộ nhớ RAM 12GB. Máy cũng sở hữu thời gian sử dụng vượt trội nhờ viên pin 5000mAh cùng sạc nhanh tới 90W.",
+      "id": 10
+    },
+    {
+      "category": "Samsung",
+      "name": "S23 Ultra",
+      "image": "https://media.bechtle.com/is/180712/1c4b3d4ee288fc9434f5175bf56070570/c3/gallery/87dc2b3d870a427c9b5bda7c55d5c24d?version=0",
+      "price": 20950000,
+      "description": "Samsung S23 Ultra là dòng điện thoại cao cấp của Samsung, sở hữu camera độ phân giải 200MP ấn tượng, chip Snapdragon 8 Gen 2 mạnh mẽ, bộ nhớ RAM 8GB mang lại hiệu suất xử lý vượt trội cùng khung viền vuông vức sang trọng. Sản phẩm được ra mắt từ đầu năm 2023.",
+      "id": 11
+    },
+    {
+      "category": "Samsung",
+      "name": "S22 Ultra",
+      "image": "https://freebiescloud.com/wp-content/uploads/2022/02/Samsung-Galaxy-S22-Ultra-8.png",
+      "price": 17990000,
+      "description": "Galaxy S22 Ultra 5G chiếc smartphone cao cấp nhất trong bộ 3 Galaxy S22 series mà Samsung đã cho ra mắt và lần nữa S22 Ultra 5G tiếp tục trở lại đầy ngoạn mục mang đến 1 diện mạo mới khi tích hợp bút S Pen hoàn hảo trong thân máy, trang bị vi xử lý mạnh mẽ cho các tác vụ sử dụng vô cùng mượt mà và nổi bật hơn với cụm camera không viền độc đáo mang đậm dấu ấn riêng và có mức giá bán siêu hấp dẫn.\nSở hữu một diện mạo đầy nổi bật",
+      "id": 12
+    },
+    {
+      "category": "Samsung",
+      "name": "Note 20 Ultra",
+      "image": "https://bachlongstore.vn/vnt_upload/product/09_2023/black2.png",
+      "price": 8290000,
+      "description": "Sau Galaxy Note 20 thì Galaxy Note 20 Ultra là phiên bản tiếp theo cao cấp hơn thuộc dòng Note 20 Series của Samsung, với nhiều thay đổi, từ cụm camera hỗ trợ lấy nét laser AF cùng ống kính góc rộng mới, màn hình tràn viền lên đến 6.9 inch.\nMàn hình 2K+ Dynamic AMOLED 2X tràn viền hoàn hảo, thiết kế thời thượng",
+      "id": 13
+    }
+  ]
+}

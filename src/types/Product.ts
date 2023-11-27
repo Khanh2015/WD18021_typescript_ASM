@@ -1,18 +1,30 @@
-type ProductRate = {
-  rate: number;
-  count: number;
-};
+// type ProductRate = {
+//   rate: number;
+//   count: number;
+// };
 
-export type Product = {
+// export type Product = {
+//   id: number;
+//   title: string;
+//   image: string;
+//   description: string;
+//   category: string;
+//   price: number;
+//   rating: ProductRate;
+// };
+
+// export type ProductDetailType = Product & {
+//   productListRelated: Product[];
+// };
+export type ProductType = {
   id: number;
-  title: string;
-  image: string;
-  description: string;
   category: string;
+  name: string;
+  image: string;
   price: number;
-  rating: ProductRate;
+  description: string;
 };
 
-export type ProductDetailType = Product & {
-  productListRelated: Product[];
+export type ProductDetailType = ProductType & {
+  relatedProducts: ProductType[];
 };

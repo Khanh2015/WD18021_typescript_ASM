@@ -1,3 +1,4 @@
+import { formatVND } from "../../helper/utilities";
 import { ProductDetailType } from "../../types/Product";
 
 type ProductDetailProps = {
@@ -19,7 +20,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
               {product.category}
             </h2>
             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
-              {product.title}
+              {product.name}
             </h1>
             <div className="flex mb-4">
               <span className="flex items-center">
@@ -154,7 +155,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
             </div>
             <div className="flex">
               <span className="title-font font-bold text-4xl text-gray-900">
-                ${product.price}
+                {formatVND(product.price)}
               </span>
               <button className="duration-200 flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded">
                 Add to card

@@ -1,21 +1,24 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ProductCard from "../components/elements/ProductCard";
-import { Product } from "../types/Product";
 import Slide from "../components/elements/Slide";
+import { ProductDetailType } from "../types/Product";
 
 const HomePage = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<ProductDetailType[]>([]);
   const getProduct = async () => {
-    const { data: productList } = await axios.get(
-      "https://fakestoreapi.com/products"
-    );
-    setProducts(productList);
+    try {
+      const { data: productList } = await axios.get(
+        "http://localhost:3000/products"
+      );
+      productList && setProducts(productList);
+    } catch (error) {
+      console.log(error);
+    }
   };
   useEffect(() => {
     getProduct();
   }, []);
-  console.log(products);
 
   return (
     <>

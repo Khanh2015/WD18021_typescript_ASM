@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Product, ProductDetailType } from "../types/Product";
+import { ProductDetailType } from "../types/Product";
 import axios from "axios";
 import ProductDetail from "../components/elements/ProductDetail";
 import ProductSame from "../components/elements/ProductSame";
@@ -11,19 +11,20 @@ const ProductDetailPage = () => {
 
   const getProduct = async (id: number) => {
     try {
-      const { data: product } = await axios.get(
-        `https://fakestoreapi.com/products/${id}`
-      );
-      const { data: sameProducts } = await axios.get(
-        "https://fakestoreapi.com/products/category/" + product.category
+      const [{ data: productDetail }, { data: relatedProducts }] =
+        await Promise.all([
+          axios.get("http://localhost:3000/products/" + id),
+          axios.get("http://localhost:3000/products"),
+        ]);
+
+      const renderRelatedProducts = relatedProducts.filter(
+        (product: ProductDetailType) =>
+          product.id !== id && product.category === productDetail.category
       );
 
-      const relatedProducts = sameProducts.filter(
-        (item: Product) => item.id !== +id
-      );
       setProduct({
-        ...product,
-        productListRelated: relatedProducts,
+        ...productDetail,
+        relatedProducts: renderRelatedProducts,
       });
       window.scrollTo(0, 0);
     } catch (error) {
@@ -34,7 +35,7 @@ const ProductDetailPage = () => {
     if (!id) return;
     getProduct(Number(id));
   }, [id]);
-  ``;
+
   return (
     <>
       {product && <ProductDetail product={product} />}
