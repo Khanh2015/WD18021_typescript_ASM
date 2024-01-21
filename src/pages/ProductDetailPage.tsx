@@ -1,27 +1,23 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ProductDetailType } from "../types/Product";
-import axios from "axios";
+import { ProductDetailType, ProductType } from "../types/Product";
 import ProductDetail from "../components/elements/ProductDetail";
 import ProductSame from "../components/elements/ProductSame";
+import { list, read } from "../api/product";
 
 const ProductDetailPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState<ProductDetailType | null>(null);
 
-  const getProduct = async (id: number) => {
+  const getProduct = async (_id: string) => {
     try {
       const [{ data: productDetail }, { data: relatedProducts }] =
-        await Promise.all([
-          axios.get("http://localhost:3000/products/" + id),
-          axios.get("http://localhost:3000/products"),
-        ]);
+        await Promise.all([read(_id), list()]);
 
       const renderRelatedProducts = relatedProducts.filter(
-        (product: ProductDetailType) =>
-          product.id !== id && product.category === productDetail.category
+        (product: ProductType) =>
+          product._id !== _id && product.category === productDetail.category
       );
-
       setProduct({
         ...productDetail,
         relatedProducts: renderRelatedProducts,
@@ -33,7 +29,7 @@ const ProductDetailPage = () => {
   };
   useEffect(() => {
     if (!id) return;
-    getProduct(Number(id));
+    getProduct(id);
   }, [id]);
 
   return (

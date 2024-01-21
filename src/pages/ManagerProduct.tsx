@@ -1,33 +1,49 @@
 import { useEffect, useState } from "react";
 import { ProductDetailType } from "../types/Product";
-import axios from "axios";
 import { Link } from "react-router-dom";
 import { formatVND } from "../helper/utilities";
+import { list, remove } from "../api/product";
+import Swal from "sweetalert2";
 
 type Props = {};
 
 const ManagerProduct = (props: Props) => {
-  const [products, setProducts] = useState<ProductDetailType[] | null>(null);
+  const [products, setProducts] = useState<ProductDetailType[]>([]);
 
   const getAllProduct = async () => {
     try {
-      const { data } = await axios.get("http://localhost:3000/products");
-      data && setProducts(data);
+      const { data } = await list();
+      setProducts(data);
     } catch (error) {
       console.error(error);
     }
   };
 
-  const handleDelete = async (id: number) => {
-    if (!id) return;
+  const handleDelete = async (_id: string) => {
+    if (!_id) return;
     try {
-      const check = confirm("Bạn có muốn xóa không?");
-      if (check) {
-        await axios.delete("http://localhost:3000/products/" + id);
-        if (products) {
-          const newProducts = products.filter((product) => product.id !== id);
+      const check = () => {
+        return Swal.fire({
+          title: "Delete?",
+          text: "Bạn chắc rằng mình muốn xóa sản phẩm này chứ?",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#d33",
+          cancelButtonColor: "#3085d6",
+          confirmButtonText: "Xóa",
+        });
+      };
+      const result = await check();
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Successfully!",
+          text: "Bạn đã xóa sản phẩm thành công.",
+          icon: "success",
+        });
+        const { data: product } = await remove(_id);
+        if (product) {
+          const newProducts = products.filter((product) => product._id !== _id);
           setProducts(newProducts);
-          alert("Xóa thành công!");
         }
       }
     } catch (error) {
@@ -82,20 +98,18 @@ const ManagerProduct = (props: Props) => {
                   <td className="p-4">
                     <img className="max-w-[100px]" src={product.image} />
                   </td>
-                  <td className="p-4 max-w-[200px]">
-                    {product.description.slice(0, 100)}...
-                  </td>
+                  <td className="p-4 max-w-[200px]">{product.description}</td>
                   <td className="p-4">{product.category}</td>
                   <td className="p-4">{formatVND(product.price)}</td>
                   <td className="p-4">
                     <Link
-                      to={`edit/${product.id}`}
+                      to={`edit/${product._id}`}
                       className="text-lg font-bold text-blue-600 dark:text-blue-500 hover:underline mr-5"
                     >
                       Edit
                     </Link>
                     <button
-                      onClick={() => handleDelete(product.id)}
+                      onClick={() => handleDelete(product._id)}
                       className="text-lg font-bold text-red-600 dark:text-red-500 hover:underline"
                     >
                       Delete

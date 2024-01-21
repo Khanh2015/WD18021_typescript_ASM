@@ -1,9 +1,13 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { add } from "../api/product";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 
 type Props = {};
 type FormValues = {
+  _id: string;
   category: string;
   name: string;
   price: number;
@@ -11,6 +15,24 @@ type FormValues = {
   description?: string;
 };
 const AddProduct = (props: Props) => {
+  const notify = () => {
+    Swal.fire({
+      title: "Successfully!",
+      text: "Thêm sản phẩm thành công!",
+      icon: "success",
+    });
+  };
+  // const notify = () =>
+  //   toast.success("Thêm sản phẩm thành công!", {
+  //     position: "top-center",
+  //     autoClose: 5000,
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //     theme: "light",
+  //   });
   const {
     register,
     handleSubmit,
@@ -22,11 +44,12 @@ const AddProduct = (props: Props) => {
   const onSubmit: SubmitHandler<FormValues> = async (product) => {
     try {
       if (product) {
-        const { data } = await axios.post(
-          "http://localhost:3000/products",
-          product
-        );
-        data && navigate("/admin/products");
+        const { data } = await add(product);
+        if (data) {
+          notify();
+          // setTimeout(() => navigate("/admin/products"), 3000);
+          navigate("/admin/products");
+        }
       }
     } catch (error) {
       console.log(error);

@@ -1,10 +1,14 @@
 import { useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { edit, read } from "../api/product";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Swal from "sweetalert2";
 
 type Props = {};
 type FormValues = {
+  _id?: string;
   category: string;
   name: string;
   price: number;
@@ -12,12 +16,20 @@ type FormValues = {
   description?: string;
 };
 const EditProduct = (props: Props) => {
+  const notify = () => {
+    Swal.fire({
+      title: "Successfully!",
+      text: "Cập nhật sản phẩm thành công!",
+      icon: "success",
+    });
+  };
+
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const getProduct = async (id: number) => {
+  const getProduct = async (_id: string) => {
     try {
-      const { data } = await axios.get(`http://localhost:3000/products/${id}`);
+      const { data } = await read(_id);
       data && reset(data);
     } catch (error) {
       console.log(error);
@@ -26,7 +38,7 @@ const EditProduct = (props: Props) => {
 
   useEffect(() => {
     if (!id) return;
-    getProduct(Number(id));
+    getProduct(id);
   }, []);
 
   const {
@@ -39,11 +51,11 @@ const EditProduct = (props: Props) => {
   const onSubmit: SubmitHandler<FormValues> = async (product) => {
     try {
       if (product) {
-        const { data } = await axios.put(
-          "http://localhost:3000/products/" + id,
-          product
-        );
-        data && navigate("/admin/products");
+        const { data } = await edit(id, product);
+        if (data) {
+          notify();
+          navigate("/admin/products");
+        }
       }
     } catch (error) {
       console.log(error);

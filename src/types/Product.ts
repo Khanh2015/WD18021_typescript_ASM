@@ -17,12 +17,12 @@
 //   productListRelated: Product[];
 // };
 export type ProductType = {
-  id: number;
+  _id: string;
   category: string;
   name: string;
-  image: string;
+  image?: string;
   price: number;
-  description: string;
+  description?: string;
 };
 
 export type ProductDetailType = ProductType & {

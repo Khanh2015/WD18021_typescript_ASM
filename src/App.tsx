@@ -9,6 +9,8 @@ import Dashboard from "./pages/Dashboard";
 import ManagerProduct from "./pages/ManagerProduct";
 import AddProduct from "./pages/AddProduct";
 import EditProduct from "./pages/EditProduct";
+import PrivateRouter from "./components/elements/PrivateRouter";
+import Signup from "./pages/SignupPage";
 
 function App() {
   return (
@@ -20,7 +22,14 @@ function App() {
             <Route path="products/:id" element={<ProductDetailPage />} />
             <Route path="profile" element={<ProfilePage />} />
           </Route>
-          <Route path="/admin" element={<AdminLayout />}>
+          <Route
+            path="/admin"
+            element={
+              <PrivateRouter>
+                <AdminLayout />
+              </PrivateRouter>
+            }
+          >
             <Route index element={<Navigate to="dashboard" />} />
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="products">
@@ -30,6 +39,7 @@ function App() {
             </Route>
           </Route>
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </BrowserRouter>
     </>
